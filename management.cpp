@@ -234,3 +234,45 @@ public:
         p.d_date=0;
         p.d_month=0;
     }
+/**********************************************************************
+// FUNCTION TO APPEND CUSTOMER
+/********************************************************************
+
+   void cust_app()
+   {
+     int ten, temp;
+     cleardevice();
+     f1.open("cust.txt",ios::app|ios::binary);
+     f1.seekg(0,ios::end);
+     ten=f1.tellg()/sizeof(p);
+     p.c_no=ten+1;
+     setfillstyle(7,1);
+     floodfill(0,0,4);
+     setfillstyle(7,10);
+     bar(17,50,605,470);
+     rectabgle(17,50,605,470);
+     setfillstyle(1,7);
+     bar(24,57,598,463);
+     rectangle(24,57,598,463);
+     setcolor(4);
+     settextstyle(7,0,1);
+     outtextxy(70,30,"NAME");
+     gotoxy(50,6);
+     cin>>p.c_name;
+     outtextxy(30,120,"ADDRESS");
+     gotoxy(50,9);
+     gets(p.c_add);
+     outtextxy(30,170,"DATE OF ARRIVAL");
+     gotoxy(50,12);
+     cin>>p.a_date;
+     outtextxy(30,220,"MONTH OF ARRIVAL");
+     gotoxy(50,15);
+     cin>>p.a_month;
+     outtextxy(30,270,"YEAR OF ARRIVAL");
+     gotoxy(50,18);
+     cin>>p.a_year;
+     p.room_no=ten+1;
+     f1.write((char*)&p,sizeof(p));
+     f1.close()
+   }
+
