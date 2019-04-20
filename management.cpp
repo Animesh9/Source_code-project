@@ -275,4 +275,49 @@ public:
      f1.write((char*)&p,sizeof(p));
      f1.close()
    }
+ //**********************************************
+//  FUNCTION TO DISPLAY CUSTOMER IN HOTEL
+//**********************************************
+
+    void cust_disp()
+    {
+        cleardevice();
+        f1.close();
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(20,20,620,450);
+        rectangle(20,20,620,450);
+        setfillstyle(1,7);
+        bar(27,27,613,443);
+        rectangle(27,27,613,443);
+        setcolor(4);
+        setfillstyle(1,2);
+        settextstyle(7,0,1);
+        outtextxy(25,40," CUST NO      NAME     ADDRESS      ROOM.NO     DATE");
+        gotoxy(30,3);
+        int c=0;
+        f1.open("cust.txt",ios::in|ios::binary);
+        f1.seekg(0,ios::beg);
+        char h[5],pr[5],d[5],m[6];
+        while(f1.read((char*)&p,sizeof(p)))
+        {
+            c++;
+            setcolor(1);
+            settextstyle(1,0,1);
+            itoa(p.c_no,h,10);
+            outtextxy(55,50+20*c,h);
+            outtextxy(160,50+20*c,p.c_name);
+            outtextxy(280,50+20*c,p.c_add);
+            itoa(p.room_no,pr,10);
+            outtextxy(440,50+20*c,pr);
+            itoa(p.a_date,d,10);
+            outtextxy(550,50+20*c,d);
+            outtextxy(560,50+20*c,"/");
+            itoa(p.a_month,m,10);
+            outtextxy(570,50+20*c,m);
+        }//END OF WHILE
+        getch();
+        f1.close();
+    }
 
