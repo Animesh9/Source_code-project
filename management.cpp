@@ -233,4 +233,33 @@ public:
         p.c_no=0;
         p.d_date=0;
         p.d_month=0;
-    }
+    } 
+
+
+
+    //Aman's part of code
+
+
+    //  THIS CLASS CONTAINS INFORMATION ABOUT HOTEL
+class hotel
+{
+private:
+    fstream f1;
+
+    struct cust
+    {
+        int c_no;
+        char c_name[20];
+        char c_add[20];
+        int a_date;
+        int a_month;
+        int a_year;
+        int d_date;
+        int d_month;
+        int d_year;
+        int room_no;
+        char room_type[25];
+    } x;
+
+public:
+};
