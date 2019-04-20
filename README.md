@@ -2,7 +2,7 @@
 
 This is the final project for SOURCE CODE MANAGEMENT (CSDV 1003).
 This project is based on HOTEL MANAGEMENT SYSTEM.
-In this project I'm the manager and the collaboraters are Devansh, Anurag Mor and Devmalya.
+In this project I'm the manager and the collaboraters are Devansh, Aman Gupta and Devmalya.
 This project is all about Hotel Management System.
 I'll create the functions used, functions for displaying food, functions to append in food menu, functions for food bill and function to delete food menu.
 Also I'll declare the class containing information related to customer.
