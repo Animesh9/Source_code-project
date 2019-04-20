@@ -387,3 +387,85 @@ public:
         cin>>c;
         return c;
     }
+
+
+    //  FUNCTION for ENDING
+    void bye()
+    {
+        cleardevice();
+        setcolor(12);
+        settextstyle(1,0,5);
+        setbkcolor(BLUE);
+        outtextxy(70,150,"THANKS FOR VISITING");
+        setcolor(10);
+        settextstyle(1,0,8);
+        outtextxy(100,250,"PROJECT");
+        settextstyle(1,0,3);
+        outtextxy(150,450,"SHUTTING DOWN.. . .");
+        getch();
+        setcolor(12);
+        settextstyle(1,0,5);
+        outtextxy(70,150,"THANKS FOR VISITING");
+        setcolor(10);
+        settextstyle(1,0,8);
+        outtextxy(100,250,"PROJECT");
+        settextstyle(1,0,3);
+        outtextxy(150,450,"SHUTTING DOWN.. . .");
+
+        for(int i=0; i<=10; i++)
+        {
+            sound(1000*i);
+            setbkcolor(i);
+            nosound();
+        }
+    }
+
+//  FUNCTION OF CHOICE FOR INFORMATION
+
+    void choice(int a)
+    {
+        switch(a)
+        {
+        case 1:
+        {
+            information();
+            break;
+        }
+        case 2:
+        {
+            cust.cust_detail();
+            break;
+        }
+        case 3:
+        {
+            d.food_menu();
+            break;
+        }
+        case 4:
+        {
+            cust.cust_bill();
+            break;
+        }
+
+        }
+    }
+
+//  FUNCTION FOR INFORMATION
+
+    void information()
+    {
+        cleardevice();
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(17,50,605,470);
+        rectangle(17,50,605,470);
+        setfillstyle(1,7);
+        bar(24,57,598,463);
+        rectangle(24,57,598,463);
+        gotoxy(6,4);
+        setcolor(4);
+        getch();
+    }
+};
+
