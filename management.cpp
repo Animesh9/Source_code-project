@@ -236,10 +236,9 @@ public:
         p.c_no=0;
         p.d_date=0;
         p.d_month=0;
-    }
-  
-  
-//My name is Devansh Markan and I am one of the Collaborator with Animesh's Project
+    } 
+
+  //My name is Devansh Markan and I am one of the Collaborator with Animesh's Project
 
     //FUNCTION FOR CUSTOMER BILL
 
@@ -738,4 +737,337 @@ public:
     }
 };
 
-               
+
+    //Aman's part of code
+
+
+    //  THIS CLASS CONTAINS INFORMATION ABOUT HOTEL
+class hotel
+{
+private:
+    fstream f1;
+
+    struct cust
+    {
+        int c_no;
+        char c_name[20];
+        char c_add[20];
+        int a_date;
+        int a_month;
+        int a_year;
+        int d_date;
+        int d_month;
+        int d_year;
+        int room_no;
+        char room_type[25];
+    } x;
+
+public:
+};
+
+// THIS PART OF CODE IS FOR CLASS CONTROLLING ALL THE CLASSES
+
+class control
+{
+private:
+    int ch;
+
+public:
+    hotel h;
+    customer cust;
+    food d;
+
+
+//  FUNCTION FOR PASSWORD
+
+    void pass()
+    {
+        char passw[20];
+        for(;;)
+        {
+            hot_name();
+            setcolor(4);
+            setfillstyle(7,1);
+            floodfill(0,0,4);
+            setfillstyle(7,10);
+            bar(50,60,600,450);
+            rectangle(50,60,600,450);
+            setfillstyle(1,7);
+            bar(57,67,593,443);
+            rectangle(57,67,593,443);
+            setcolor(4);
+            settextstyle(7,0,1);
+            settextstyle(7,0,2) ;
+            outtextxy(200,220,"ENTER PASSWORD :-");
+            gotoxy(55,15);
+            cin>>passw;
+            if (strcmp(passw,"a")==0)
+            {
+                cleardevice();
+                break;
+            }
+            else
+            {
+                setcolor(4);
+                settextstyle(7,0,1);
+                for(int i=0; i<=10; i++)
+                {
+                    setcolor(4);
+                    outtextxy(200,320,"ENTER CORRECT  PASSWORD ");
+                    delay(100);
+                    setcolor(WHITE);
+                    outtextxy(200,320,"ENTER CORRECT  PASSWORD ");
+                    delay(100);
+                    settextstyle(7,0,1);
+                    outtextxy(200,340,"PRESS ANY KEY TO  CONTINUE");
+                }
+                cleardevice();
+
+            }
+        }
+        do
+        {
+            ch=mmenu();
+            choice(ch);
+        }
+        while(ch!=5); //END OF WHILE
+    }
+
+
+    // FUNCTION FOR HOTEL NAame
+    void hot_name()
+    {
+        settextstyle(4,0,5);
+        setcolor(WHITE);
+        outtextxy(200,3,"THE TIME HOTEL");
+        line(200,50,440,50);
+    }
+
+//  FUNCTION FOR MAIN MENU
+
+
+    int mmenu()
+    {
+        cleardevice();
+        int c;
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(50,80,600,470);
+        rectangle(50,80,600,470);
+        setfillstyle(1,7);
+        bar(57,87,593,463);
+        rectangle(57,87,593,463);
+        setcolor(9);
+        setfillstyle(1,2);
+        bar(210,140,410,238);
+        rectangle(210,140,410,158);
+        rectangle(210,140,410,174);
+        rectangle(210,140,410,190);
+        rectangle(210,140,410,206);
+        rectangle(210,140,410,222);
+        rectangle(210,140,410,238);
+        setcolor(WHITE);
+        settextstyle(4,0,4);
+        outtextxy(160,20,"HOTEL MANAGEMENT SYSTEM");
+        setcolor(14);
+        line(163,60,515,60);
+        setcolor(4);
+        settextstyle(1,0,1);
+        outtextxy(225,137,"  MAIN MENU");
+        outtextxy(210,154," 1. INFORMATION");
+        outtextxy(210,170," 2. CUSTOMER DETAIL");
+        outtextxy(210,186," 3. FOOD DETAIL ");
+        outtextxy(210,202," 4. CUSTOMER BILL ");
+        outtextxy(210,218," 5. EXIT ");
+        setcolor(4);
+        settextstyle(7,0,2);
+        outtextxy(210,300,"ENTER CHOICE :- ");
+        fflush(stdin);
+        gotoxy(53,20);
+        cin>>c;
+        return c;
+    }
+
+
+    //  FUNCTION for ENDING
+    void bye()
+    {
+        cleardevice();
+        setcolor(12);
+        settextstyle(1,0,5);
+        setbkcolor(BLUE);
+        outtextxy(70,150,"THANKS FOR VISITING");
+        setcolor(10);
+        settextstyle(1,0,8);
+        outtextxy(100,250,"PROJECT");
+        settextstyle(1,0,3);
+        outtextxy(150,450,"SHUTTING DOWN.. . .");
+        getch();
+        setcolor(12);
+        settextstyle(1,0,5);
+        outtextxy(70,150,"THANKS FOR VISITING");
+        setcolor(10);
+        settextstyle(1,0,8);
+        outtextxy(100,250,"PROJECT");
+        settextstyle(1,0,3);
+        outtextxy(150,450,"SHUTTING DOWN.. . .");
+
+        for(int i=0; i<=10; i++)
+        {
+            sound(1000*i);
+            setbkcolor(i);
+            nosound();
+        }
+    }
+
+//  FUNCTION OF CHOICE FOR INFORMATION
+
+    void choice(int a)
+    {
+        switch(a)
+        {
+        case 1:
+        {
+            information();
+            break;
+        }
+        case 2:
+        {
+            cust.cust_detail();
+            break;
+        }
+        case 3:
+        {
+            d.food_menu();
+            break;
+        }
+        case 4:
+        {
+            cust.cust_bill();
+            break;
+        }
+
+        }
+    }
+
+//  FUNCTION FOR INFORMATION
+
+    void information()
+    {
+        cleardevice();
+        setfillstyle(7,1);
+        floodfill(0,0,4);
+        setfillstyle(7,10);
+        bar(17,50,605,470);
+        rectangle(17,50,605,470);
+        setfillstyle(1,7);
+        bar(24,57,598,463);
+        rectangle(24,57,598,463);
+        gotoxy(6,4);
+        setcolor(4);
+        getch();
+    }
+
+};
+
+
+// THIS IS MAIN FUNCTION
+
+
+
+void main()
+{
+    clrscr();
+    int gm=DETECT,gd;
+    initgraph(&gm,&gd,"c:\\tc\\");
+    setbkcolor(BLUE);
+    setcolor(RED);
+    for(int i=0; i<=450; i++)
+    {
+        circle(305,250,i);
+        delay(3);
+    }
+    setcolor(GREEN);
+    settextstyle(1,0,11);
+    outtextxy(80,150,"CODEWITHC");
+    getch();
+    cleardevice();
+    setbkcolor(BLUE);
+    setcolor(RED);
+    for(i=0; i<=450; i++)
+    {
+        circle(305,250,i);
+        delay(3);
+    }
+    setcolor(GREEN);
+    settextstyle(1,0,9);
+    outtextxy(100,0,"PRESENTS");
+    outtextxy(270,120,"A");
+    outtextxy(100,240,"PROJECT");
+    outtextxy(250,360,"ON");
+    getch();
+    cleardevice();
+    setbkcolor(4);
+    setcolor(GREEN);
+    for(i=0; i<=9; i++)
+    {
+        settextstyle(1,0,i);
+        outtextxy(40+i,140+i," TIME HOTEL ");
+        sound(200*i);
+        delay(600);
+        nosound();
+        cleardevice();
+    }
+    outtextxy(46,146,"  TIME HOTEL");
+    getch();
+    control c;
+    // void acknow()
+    //{
+    // cleardevice();
+    setbkcolor(BLACK);
+    setfillstyle(7,1);
+    floodfill(0,0,4);
+    setfillstyle(7,10);
+    bar(17,50,605,470);
+    rectangle(17,50,605,470);
+    setfillstyle(1,7);
+    bar(24,57,598,463);
+    rectangle(24,57,598,463);
+    setcolor(5);
+    settextstyle(1,0,5);
+    outtextxy(85,5,"ACKNOWLEDGEMENT");
+    settextstyle(1,0,3);
+    setcolor(BLACK);
+    outtextxy(80,60,"I wish to express my deep and heartiest");
+    outtextxy(40,90,"thanks to my C++ and all other computer teachers whose");
+    outtextxy(40,120,"valueable advice and guidance helped me a  ");
+    outtextxy(40,150,"lot in doing this project from conception to");
+    outtextxy(40,180,"completion ");
+    outtextxy(100,210,"I am also very thankful to my colleagues ");
+    outtextxy(40,240,"and friends who gave me moral encouragement ");
+    outtextxy(40,270,"to make this project a success.");
+    outtextxy(40,300,"Brought to you BY:-         ");
+    outtextxy(40,330,"Codewithc.com                ");
+    outtextxy(40,360,"(C Mini Projects      ");
+    outtextxy(40,390,"Source Codes      ");
+    outtextxy(40,420,"Tutorials, Games and More!!!     ");
+    getch();
+    cleardevice();
+
+    // FOR VERIFICATION
+    setfillstyle(7,1);
+    floodfill(0,0,4);
+    setfillstyle(7,10);
+    bar(17,50,605,470);
+    rectangle(17,50,605,470);
+    setfillstyle(1,7);
+    bar(24,57,598,463);
+    rectangle(24,57,598,463);
+    setcolor(5);
+    settextstyle(1,0,5);
+    outtextxy(120,5,"VERIFICATION");
+    settextstyle(1,0,3);
+    setcolor(BLACK);
+}
+
